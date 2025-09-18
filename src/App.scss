@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.student-card {
+  width: 320px;
+  height: 480px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  transform: rotateY(0deg);
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+.student-card:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+@keyframes cardFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  opacity: 0.1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header {
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-shapes {
+  position: relative;
+  width: 35px;
+  height: 35px;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 3px;
+  animation: shapeRotate 4s linear infinite;
+}
+
+.shape-1 {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  top: 0;
+  left: 0;
+}
+
+.shape-2 {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  top: 0;
+  right: 0;
+  animation-delay: -1s;
+}
+
+.shape-3 {
+  width: 18px;
+  height: 18px;
+  background: linear-gradient(45deg, #45b7d1, #2980b9);
+  bottom: 0;
+  left: 2px;
+  animation-delay: -2s;
+}
+
+@keyframes shapeRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.university-text {
+  font-size: 10px;
+  line-height: 1.2;
+  color: #2c3e50;
+}
+
+.university-name {
+  font-weight: bold;
+  font-size: 11px;
+  color: #e74c3c;
+}
+
+.university-type {
+  font-weight: bold;
+  font-size: 11px;
+  color: #3498db;
+}
+
+.university-subtitle {
+  font-size: 8px;
+  color: #7f8c8d;
+  margin-top: 2px;
+}
+
+.student-photo-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.photo-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+  padding: 4px;
+  animation: frameRotate 10s linear infinite;
+}
+
+@keyframes frameRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.student-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 120px;
+  animation: avatarBounce 2s ease-in-out infinite;
+}
+
+@keyframes avatarBounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.student-info {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.student-name {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 5px;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.student-role {
+  color: #7f8c8d;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  padding: 0 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transform: translateX(0);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+}
+
+.contact-text {
+  font-size: 13px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.decorative-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: floatDots 6s ease-in-out infinite;
+}
+
+.dot-1 {
+  top: 20%;
+  right: 15%;
+  background: #ff6b6b;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  top: 40%;
+  left: 10%;
+  background: #4ecdc4;
+  animation-delay: 1.5s;
+}
+
+.dot-3 {
+  bottom: 30%;
+  right: 20%;
+  background: #45b7d1;
+  animation-delay: 3s;
+}
+
+.dot-4 {
+  bottom: 15%;
+  left: 15%;
+  background: #96ceb4;
+  animation-delay: 4.5s;
+}
+
+@keyframes floatDots {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
