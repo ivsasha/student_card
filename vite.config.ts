@@ -10,6 +10,7 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  base: '/student_card/',
   test: {
     globals: true,
     environment: 'jsdom',

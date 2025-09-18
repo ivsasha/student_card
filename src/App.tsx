@@ -27,7 +27,7 @@ const App: React.FC = () => (
       <div className="student-photo-container">
         <div className="photo-frame">
           <div className="student-photo">
-             <img className="avatar" src="./myPhoto/myPhoto.jpg" alt="myPhoto" />
+             <img className="avatar" src="/myPhoto/myPhoto.jpg" alt="myPhoto" />
           </div>
         </div>
       </div>
