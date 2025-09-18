@@ -1,6 +1,5 @@
 import { setupIonicReact } from "@ionic/react";
-import './App.scss';
-
+import "./App.scss";
 
 setupIonicReact();
 
@@ -27,7 +26,11 @@ const App: React.FC = () => (
       <div className="student-photo-container">
         <div className="photo-frame">
           <div className="student-photo">
-             <img className="avatar" src="/myPhoto/myPhoto.jpg" alt="myPhoto" />
+            <img
+              className="avatar"
+              src="/student_card/myPhoto/myPhoto.jpg"
+              alt="myPhoto"
+            />
           </div>
         </div>
       </div>
